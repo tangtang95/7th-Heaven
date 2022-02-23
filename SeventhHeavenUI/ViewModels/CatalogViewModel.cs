@@ -1047,7 +1047,7 @@ namespace SeventhHeavenUI.ViewModels
             }
             allowedSize *= (1024 * 1024);
 
-            if ( item.Category == DownloadCategory.Image && ( Sys.Settings.DownloadPreviewSize >= 4 || download.ContentLength <= allowedSize ) )
+            if ( item.Category == DownloadCategory.Image && ( Sys.Settings.DownloadPreviewSize >= 4 || download.ContentLength >= allowedSize ) )
             {
                 Logger.Warn("cancelled download, preview image greater than " + displaySize+" you can change this in the settings.");
                 item.PerformCancel?.Invoke();
